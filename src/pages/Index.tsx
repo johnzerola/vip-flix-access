@@ -58,7 +58,7 @@ const Index = () => {
       <head>
         <title>OnlyFans Privacy Vazados - +813 Atrizes Brasileiras - Fotos e Vídeos Vazados</title>
         <meta name="description" content="Acesso exclusivo a +813 atrizes brasileiras, +200 mil fotos e vídeos vazados do OnlyFans e Privacy. Conteúdo premium das maiores influenciadoras." />
-        <meta name="keywords" content="OnlyFans, Privacy, vazados, atrizes brasileiras, vídeos vazados, fotos vazadas, influenciadoras" />
+        <meta name="keywords" content="OnlyFans, Privacy, vazados, atrizes brasileiras, vídeos vazados, fotos vazadas, influenciadoras, Kim Kardashian,Kylie Jenner,Kendall Jenner,Anitta,Bruna Marquezine,Larissa Manoela,Marina Ruy Barbosa,Paolla Oliveira,Grazi Massafera,Deborah Secco,Juliana Paes,Claudia Leitte,Ivete Sangalo,Virginia Fonseca,Bianca Andrade,Camila Coelho,Thassia Naves,Gabi Brandt,Gabriela Pugliesi,Carlinhos Maia,Whindersson Nunes,Lady Gaga,Rihanna,Beyonce,Shakira,Taylor Swift,Billie Eilish,Selena Gomez,Megan Fox,Jennifer Lopez,Margot Robbie,Gal Gadot,Emma Watson,Scarlett Johansson,Zendaya,Natalie Portman,Emma Stone,Reese Witherspoon,Jennifer Lawrence,Kristen Stewart,Mila Kunis,Kate Upton,Ashley Graham,Sophie Turner,Cara Delevingne,Addison Rae,Charli D'Amelio,Dixie D'Amelio,Bella Hadid,Gigi Hadid" />
         
         {/* Proteção contra bots específicos */}
         <meta name="robots" content="index, follow" />
