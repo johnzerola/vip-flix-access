@@ -76,3 +76,20 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+
+## Creating an Admin User in Supabase
+
+The database restricts reading analytics tables to administrators. An admin is
+any user listed in the `admin_users` table or whose UUID matches the fixed ID
+defined in the migration (`00000000-0000-0000-0000-000000000000`).
+
+After signing up a user via the Supabase dashboard, run the following SQL to
+grant them admin access:
+
+```sql
+insert into public.admin_users (user_id) values ('REPLACE_WITH_USER_ID');
+```
+
+Run this in the SQL editor, replacing `REPLACE_WITH_USER_ID` with the user's
+actual ID. Once inserted, the user will be able to read from `visitas` and
+`cliques` when authenticated.
