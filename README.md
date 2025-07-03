@@ -62,8 +62,17 @@ This project is built with:
 
 ## Environment variables
 
-Copy `.env.example` to `.env` and set `VITE_ADMIN_PASSWORD` with your admin
-password.
+Copy `.env.example` to `.env` and set the following variables with your
+project details:
+
+```sh
+VITE_SUPABASE_URL=<your-supabase-url>
+VITE_SUPABASE_KEY=<your-supabase-key>
+VITE_ADMIN_PASSWORD=<admin-dashboard-password>
+```
+
+Keep these values in your local `.env` file and **do not** commit real keys to
+the repository.
 
 ## How can I deploy this project?
 
