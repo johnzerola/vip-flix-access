@@ -21,8 +21,8 @@ const AdminPanel = () => {
   const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);
   const [loading, setLoading] = useState(false);
 
-  // Senha forte para acesso admin
-  const ADMIN_PASSWORD = "VipAccess2024!@#$";
+  // Senha definida via variável de ambiente
+  const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;
 
   const handleLogin = () => {
     if (password === ADMIN_PASSWORD) {
