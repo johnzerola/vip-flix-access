@@ -60,6 +60,11 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## Environment variables
+
+Copy `.env.example` to `.env` and set `VITE_ADMIN_PASSWORD` with your admin
+password.
+
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/2ae8c212-9c61-42a0-8f6e-11a435969ed0) and click on Share -> Publish.
