@@ -58,7 +58,7 @@ const Index = () => {
       <head>
         <title>OnlyFans Privacy Vazados - +813 Atrizes Brasileiras - Fotos e Vídeos Vazados</title>
         <meta name="description" content="Acesso exclusivo a +813 atrizes brasileiras, +200 mil fotos e vídeos vazados do OnlyFans e Privacy. Conteúdo premium das maiores influenciadoras." />
-        <meta name="keywords" content="OnlyFans, Privacy, vazados, atrizes brasileiras, vídeos vazados, fotos vazadas, influenciadoras" />
+        <meta name="keywords" content="Mia,Kim,Riley,Abby,Lexi,Eva,Paige,Lena,Nina,Ava,Sara,Lucy,Bella,Casey,Jade,Amy,Zoey,Ruby,Coco,Demi,Lacy,Isis,Jane,Lola,Ally,Leah,Star,Olga,Ivy,Lea,Keira,Emmy,Kira,Jana,Romi,Emma,Hope,Lita,Aria,Kiki,Lily,Macy,Tara,Gabi,Vivi,Leila,Mira,Rina,Suri,Nora" />
         
         {/* Proteção contra bots específicos */}
         <meta name="robots" content="index, follow" />
@@ -118,8 +118,7 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            {/* TROQUE A URL DA IMAGEM ABAIXO - Para substituir por imagem real */}
-            {/* <img src="https://sua-imagem-aqui.jpg" alt="Atrizes OnlyFans" className="w-full max-w-2xl mx-auto rounded-2xl shadow-2xl" /> */}
+            {/* <img src="https://vazadosprivacyflix.com/og-image.jpg" alt="Atrizes OnlyFans" className="w-full max-w-2xl mx-auto rounded-2xl shadow-2xl" /> */}
           </div>
 
           {/* Título Principal com animação */}
