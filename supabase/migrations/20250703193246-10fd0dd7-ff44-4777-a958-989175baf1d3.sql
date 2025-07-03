@@ -19,6 +19,11 @@ CREATE TABLE public.cliques (
   created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now()
 );
 
+-- Tabela de administradores que podem acessar os relatórios
+CREATE TABLE public.admin_users (
+  user_id UUID PRIMARY KEY REFERENCES auth.users(id)
+);
+
 -- Habilitar Row Level Security (RLS) nas tabelas
 ALTER TABLE public.visitas ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.cliques ENABLE ROW LEVEL SECURITY;
@@ -35,15 +40,26 @@ CREATE POLICY "Permitir inserção de cliques"
   WITH CHECK (true);
 
 -- Política para leitura apenas por usuários autenticados (painel admin)
-CREATE POLICY "Admin pode ver visitas" 
-  ON public.visitas 
-  FOR SELECT 
-  USING (auth.uid() IS NOT NULL);
+-- Apenas administradores cadastrados ou um ID especifico podem ler
+CREATE POLICY "Admin pode ver visitas"
+  ON public.visitas
+  FOR SELECT
+  USING (
+    auth.uid() = '00000000-0000-0000-0000-000000000000'
+    OR EXISTS (
+      SELECT 1 FROM public.admin_users au WHERE au.user_id = auth.uid()
+    )
+  );
 
-CREATE POLICY "Admin pode ver cliques" 
-  ON public.cliques 
-  FOR SELECT 
-  USING (auth.uid() IS NOT NULL);
+CREATE POLICY "Admin pode ver cliques"
+  ON public.cliques
+  FOR SELECT
+  USING (
+    auth.uid() = '00000000-0000-0000-0000-000000000000'
+    OR EXISTS (
+      SELECT 1 FROM public.admin_users au WHERE au.user_id = auth.uid()
+    )
+  );
 
 -- Criar índices para melhor performance
 CREATE INDEX idx_visitas_timestamp ON public.visitas(timestamp);
