@@ -89,7 +89,7 @@ All colors MUST be HSL.
   @keyframes slide-in-up {
     from {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(50px);
     }
     to {
       opacity: 1;
@@ -112,6 +112,18 @@ All colors MUST be HSL.
     }
   }
 
+  /* Animação personalizada para o título principal */
+  @keyframes title-entrance {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px) scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
   .animate-pulse-glow {
     animation: pulse-glow 2s ease-in-out infinite;
   }
@@ -121,11 +133,15 @@ All colors MUST be HSL.
   }
 
   .animate-slide-in-up {
-    animation: slide-in-up 1s ease-out 0.3s both;
+    animation: slide-in-up 1s ease-out 0.2s both;
   }
 
   .animate-fade-in-delay {
     animation: fade-in-delay 1.2s ease-out;
+  }
+
+  .animate-title-entrance {
+    animation: title-entrance 1.2s ease-out;
   }
 
   /* Mobile optimizations */
@@ -147,6 +163,11 @@ All colors MUST be HSL.
     
     h2 {
       @apply text-2xl;
+    }
+
+    /* Optimize spacing for mobile first-fold */
+    .space-y-6 > * + * {
+      margin-top: 1.5rem;
     }
   }
 
@@ -173,6 +194,15 @@ All colors MUST be HSL.
     @apply bg-gray-800 border border-gray-700;
     z-index: 50;
   }
+
+  /* Enhanced button hover effects */
+  .hover-scale-3 {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .hover-scale-3:hover {
+    transform: scale(1.03);
+  }
 }
 
 /* Performance optimizations */
@@ -184,5 +214,11 @@ All colors MUST be HSL.
   
   .smooth-transition {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Mobile-first viewport optimization */
+  .min-h-screen-mobile {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
   }
 }

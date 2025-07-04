@@ -72,7 +72,7 @@ const Index = () => {
         <meta property="og:type" content="website" />
       </head>
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 flex flex-col items-center justify-center px-4">
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 flex flex-col items-center justify-center px-4 py-8">
         {/* Proteção JavaScript contra bots conhecidos */}
         <script dangerouslySetInnerHTML={{
           __html: `
@@ -91,62 +91,78 @@ const Index = () => {
           `
         }} />
 
-        {/* Conteúdo Principal */}
-        <div className="max-w-4xl w-full text-center space-y-8">
+        {/* Conteúdo Principal - Layout otimizado para primeira dobra */}
+        <div className="max-w-4xl w-full text-center space-y-6">
           
-          {/* Imagem Principal */}
-          <div className="relative mb-8 animate-fade-in">
-            <div className="bg-gradient-to-r from-pink-600 via-purple-600 to-red-600 rounded-2xl p-8 relative overflow-hidden">
+          {/* Título Principal Impactante */}
+          <h1 className="text-4xl md:text-6xl font-black text-white leading-tight animate-slide-in-up mb-6">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-pink-500 to-purple-600">
+              🔥 O Maior Portal VIP do Brasil
+            </span>
+            <br />
+            <span className="text-white text-2xl md:text-4xl mt-2 block">
+              OnlyFans & Privacy sem Restrições
+            </span>
+          </h1>
+
+          {/* Imagem Principal - Tamanho Reduzido */}
+          <div className="relative mb-6 animate-fade-in">
+            <div className="bg-gradient-to-r from-pink-600 via-purple-600 to-red-600 rounded-2xl p-6 relative overflow-hidden max-w-2xl mx-auto">
               <div className="absolute inset-0 bg-black/20"></div>
               <div className="relative z-10">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg aspect-square flex items-center justify-center">
-                    <span className="text-4xl">👩‍🦳</span>
+                    <span className="text-3xl">👩‍🦳</span>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg aspect-square flex items-center justify-center">
-                    <span className="text-4xl">👩‍🦱</span>
+                    <span className="text-3xl">👩‍🦱</span>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg aspect-square flex items-center justify-center">
-                    <span className="text-4xl">👩‍🦰</span>
+                    <span className="text-3xl">👩‍🦰</span>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg aspect-square flex items-center justify-center">
-                    <span className="text-4xl">👱‍♀️</span>
+                    <span className="text-3xl">👱‍♀️</span>
                   </div>
                 </div>
-                <div className="text-white text-2xl md:text-3xl font-bold">
+                <div className="text-white text-xl md:text-2xl font-bold">
                   OnlyFans & Privacy
                 </div>
               </div>
             </div>
             {/* TROQUE A URL DA IMAGEM ABAIXO - Para substituir por imagem real */}
-            {/* <img src="https://sua-imagem-aqui.jpg" alt="Atrizes OnlyFans" className="w-full max-w-2xl mx-auto rounded-2xl shadow-2xl" /> */}
+            {/* <img src="https://sua-imagem-aqui.jpg" alt="Atrizes OnlyFans" className="w-full max-w-xl mx-auto rounded-2xl shadow-2xl" /> */}
           </div>
 
-          {/* Título Principal com animação */}
-          <h1 className="text-3xl md:text-5xl font-black text-white leading-tight animate-slide-in-up">
+          {/* Texto com números impactantes */}
+          <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight animate-slide-in-up mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-purple-600">
               +813 atrizes e +200 mil fotos e vídeos vazados
             </span>
             <br />
-            <span className="text-white text-2xl md:text-4xl mt-2 block">
+            <span className="text-white text-xl md:text-2xl mt-2 block">
               Privacy e OnlyFans
             </span>
-          </h1>
+          </h2>
 
-          {/* Botões Principais com animações */}
+          {/* Botões Principais com Subtítulos */}
           <div className="flex flex-col gap-4 max-w-lg mx-auto animate-fade-in-delay">
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold text-xl px-8 py-8 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-200 min-h-[80px] w-full animate-pulse-glow"
-              onClick={handleVipClick}
-            >
-              <Crown className="mr-3 h-8 w-8" />
-              🔴 ACESSO VIP COMPLETO
-            </Button>
+            <div className="space-y-2">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold text-xl px-8 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-200 min-h-[70px] w-full animate-pulse-glow"
+                onClick={handleVipClick}
+              >
+                <Crown className="mr-3 h-8 w-8" />
+                🔴 ACESSO VIP COMPLETO
+              </Button>
+              <p className="text-gray-300 text-sm italic animate-pulse">
+                Veja todos os vídeos completos, sem censura, 100% reais
+              </p>
+            </div>
             
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-xl px-8 py-8 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-200 min-h-[80px] w-full"
+              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-xl px-8 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-200 min-h-[70px] w-full"
               onClick={handlePreviewClick}  
             >
               <Eye className="mr-3 h-8 w-8" />
@@ -155,7 +171,7 @@ const Index = () => {
           </div>
 
           {/* Link discreto para admin */}
-          <div className="mt-16">
+          <div className="mt-8">
             <a 
               href="/acesso-restrito" 
               className="text-gray-600 text-xs hover:text-gray-400 transition-colors"
