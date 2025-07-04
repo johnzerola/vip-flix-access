@@ -65,13 +65,15 @@ All colors MUST be HSL.
     scroll-behavior: smooth;
   }
 
-  /* Custom animations */
-  @keyframes pulse-glow {
+  /* Custom animations otimizadas para conversão */
+  @keyframes pulse-glow-intense {
     0%, 100% {
-      box-shadow: 0 0 5px rgba(239, 68, 68, 0.5);
+      box-shadow: 0 0 10px rgba(239, 68, 68, 0.7);
+      transform: scale(1);
     }
     50% {
-      box-shadow: 0 0 20px rgba(239, 68, 68, 0.8), 0 0 30px rgba(239, 68, 68, 0.6);
+      box-shadow: 0 0 25px rgba(239, 68, 68, 1), 0 0 35px rgba(239, 68, 68, 0.8);
+      transform: scale(1.02);
     }
   }
 
@@ -89,7 +91,7 @@ All colors MUST be HSL.
   @keyframes slide-in-up {
     from {
       opacity: 0;
-      transform: translateY(50px);
+      transform: translateY(30px);
     }
     to {
       opacity: 1;
@@ -102,7 +104,7 @@ All colors MUST be HSL.
       opacity: 0;
       transform: translateY(20px);
     }
-    50% {
+    30% {
       opacity: 0;
       transform: translateY(20px);
     }
@@ -112,11 +114,11 @@ All colors MUST be HSL.
     }
   }
 
-  /* Animação personalizada para o título principal */
+  /* Animação otimizada para o título principal */
   @keyframes title-entrance {
     0% {
       opacity: 0;
-      transform: translateY(-30px) scale(0.95);
+      transform: translateY(-20px) scale(0.98);
     }
     100% {
       opacity: 1;
@@ -124,84 +126,96 @@ All colors MUST be HSL.
     }
   }
 
-  .animate-pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
+  /* Micro animações para botões */
+  @keyframes button-hover {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.05);
+    }
+  }
+
+  .animate-pulse-glow-intense {
+    animation: pulse-glow-intense 1.5s ease-in-out infinite;
   }
 
   .animate-fade-in {
-    animation: fade-in 0.8s ease-out;
+    animation: fade-in 0.6s ease-out;
   }
 
   .animate-slide-in-up {
-    animation: slide-in-up 1s ease-out 0.2s both;
+    animation: slide-in-up 0.8s ease-out 0.1s both;
   }
 
   .animate-fade-in-delay {
-    animation: fade-in-delay 1.2s ease-out;
+    animation: fade-in-delay 1s ease-out;
   }
 
   .animate-title-entrance {
-    animation: title-entrance 1.2s ease-out;
+    animation: title-entrance 0.8s ease-out;
   }
 
-  /* Mobile optimizations */
+  /* Mobile-first optimizations para conversão máxima */
   @media (max-width: 768px) {
     .container {
-      @apply px-4;
+      @apply px-3;
     }
     
-    /* Ensure buttons are large enough for mobile */
+    /* Botões otimizados para mobile */
     button {
-      min-height: 60px;
-      min-width: 200px;
+      min-height: 65px;
+      min-width: 280px;
+      font-size: 1.1rem;
     }
     
-    /* Larger text on mobile */
+    /* Títulos otimizados para mobile */
     h1 {
-      @apply text-3xl;
+      @apply text-2xl leading-tight;
+      margin-bottom: 1rem;
     }
     
     h2 {
-      @apply text-2xl;
+      @apply text-xl leading-tight;
+      margin-bottom: 1rem;
     }
 
-    /* Optimize spacing for mobile first-fold */
-    .space-y-6 > * + * {
-      margin-top: 1.5rem;
+    /* Espaçamento otimizado para primeira dobra */
+    .space-y-4 > * + * {
+      margin-top: 1rem;
+    }
+
+    /* Padding reduzido para maximizar espaço */
+    .py-4 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
     }
   }
 
-  /* High contrast for better readability */
+  /* High contrast para melhor conversão */
   .text-shadow {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
   }
 
-  /* Custom gradient backgrounds */
-  .bg-premium-gradient {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  }
-
-  .bg-vip-gradient {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  }
-
-  /* Ensure dropdowns have proper background and z-index */
-  [data-radix-popper-content-wrapper] {
-    z-index: 50 !important;
-  }
-
-  .dropdown-content {
-    @apply bg-gray-800 border border-gray-700;
-    z-index: 50;
-  }
-
-  /* Enhanced button hover effects */
-  .hover-scale-3 {
-    transition: transform 0.2s ease-in-out;
+  /* Enhanced button hover effects para conversão */
+  .hover-scale-intense {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
-  .hover-scale-3:hover {
-    transform: scale(1.03);
+  .hover-scale-intense:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Optimização visual para hierarquia */
+  .priority-button {
+    position: relative;
+    z-index: 10;
+  }
+
+  .secondary-button {
+    position: relative;
+    z-index: 5;
   }
 }
 
@@ -220,5 +234,10 @@ All colors MUST be HSL.
   .min-h-screen-mobile {
     min-height: 100vh;
     min-height: -webkit-fill-available;
+  }
+
+  /* Conversão otimizada */
+  .conversion-optimized {
+    @apply gpu-accelerated smooth-transition;
   }
 }
