@@ -29,22 +29,33 @@ const AdminPanel = () => {
   const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState("analytics");
 
-  // Senha corrigida
-  const ADMIN_PASSWORD = "admin123";
+  const ADMIN_EMAIL = import.meta.env.VITE_ADMIN_EMAIL as string;
 
-  const handleLogin = () => {
-    if (password === ADMIN_PASSWORD) {
+  const handleLogin = async () => {
+    try {
+      const { error } = await supabase.auth.signInWithPassword({
+        email: ADMIN_EMAIL,
+        password,
+      });
+
+      if (error) {
+        toast.error("Credenciais inválidas!");
+        setPassword("");
+        return;
+      }
+
       setIsAuthenticated(true);
       toast.success("Acesso autorizado!");
       loadAnalytics();
       loadConfigs();
-    } else {
-      toast.error("Senha incorreta!");
-      setPassword("");
+    } catch (err) {
+      toast.error("Erro ao fazer login!");
+      console.error(err);
     }
   };
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
     setIsAuthenticated(false);
     setPassword("");
     setAnalytics(null);
@@ -176,9 +187,6 @@ const AdminPanel = () => {
             >
               Entrar
             </Button>
-            <p className="text-xs text-gray-500 text-center">
-              Senha: admin123
-            </p>
           </CardContent>
         </Card>
       </div>
