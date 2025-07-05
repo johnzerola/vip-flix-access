@@ -62,11 +62,8 @@ This project is built with:
 
 ## Environment variables
 
-Copy `.env.example` to `.env` and set `VITE_ADMIN_EMAIL` and
-`VITE_ADMIN_PASSWORD` with your Supabase admin user credentials. These values
-are used by the admin panel to sign in with `supabase.auth.signInWithPassword`.
-You must authenticate with these credentials before the analytics and
-configuration data can be loaded.
+Copy `.env.example` to `.env` and set `VITE_ADMIN_PASSWORD` with your admin
+password.
 
 ## How can I deploy this project?
 
