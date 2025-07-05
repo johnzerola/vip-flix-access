@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Eye, Crown } from "lucide-react";
@@ -165,22 +164,12 @@ const Index = () => {
               />
             ) : (
               <div className="bg-gradient-to-r from-pink-600 via-purple-600 to-red-600 rounded-xl p-4 relative overflow-hidden max-w-md mx-auto">
-                <div className="absolute inset-0 bg-black/20"></div>
-                <div className="relative z-10">
-                  <div className="grid grid-cols-4 gap-2 mb-3">
-                    <div className="bg-white/10 backdrop-blur-sm rounded-lg aspect-square flex items-center justify-center">
-                      <span className="text-2xl">👩‍🦳</span>
-                    </div>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-lg aspect-square flex items-center justify-center">
-                      <span className="text-2xl">👩‍🦱</span>
-                    </div>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-lg aspect-square flex items-center justify-center">
-                      <span className="text-2xl">👩‍🦰</span>
-                    </div>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-lg aspect-square flex items-center justify-center">
-                      <span className="text-2xl">👱‍♀️</span>
-                    </div>
-                  </div>
+                <img 
+                  src="/lovable-uploads/bed10d5d-32f4-4e07-b740-cf5ede3ccb2e.png" 
+                  alt="OnlyFans Content" 
+                  className="w-full h-auto rounded-lg"
+                />
+                <div className="relative z-10 mt-2">
                   <div className="text-white text-lg font-bold">
                     OnlyFans & Privacy
                   </div>
