@@ -13,6 +13,9 @@ interface SiteConfigs {
   vip_link: string;
   preview_link: string;
   hero_image_url: string;
+  hero_title: string;
+  hero_subtitle: string;
+  previas_link: string;
 }
 
 const Index = () => {
@@ -25,7 +28,10 @@ const Index = () => {
     preview_button_text: '🔵 VER PRÉVIAS GRÁTIS',
     vip_link: 'https://t.me/+SeuLinkDoGrupoVip',
     preview_link: 'https://t.me/+SeuLinkDoCanalDePrevias',
-    hero_image_url: ''
+    hero_image_url: '',
+    hero_title: '🔥 O Maior Portal VIP do Brasil',
+    hero_subtitle: 'OnlyFans & Privacy sem Restrições',
+    previas_link: 'https://t.me/SpyConteudos'
   });
 
   // Carregar configurações do Supabase
@@ -97,7 +103,7 @@ const Index = () => {
 
   const handlePreviewClick = () => {
     registrarClique(configs.preview_button_text);
-    window.open(configs.preview_link, '_blank');
+    window.open(configs.previas_link || configs.preview_link, '_blank');
   };
 
   return (
@@ -120,7 +126,7 @@ const Index = () => {
         <meta property="og:type" content="website" />
       </head>
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 flex flex-col items-center justify-center px-4 py-4">
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 flex flex-col items-center justify-center px-2 py-2 md:px-4 md:py-4">
         {/* Proteção JavaScript contra bots conhecidos */}
         <script dangerouslySetInnerHTML={{
           __html: `
@@ -139,17 +145,17 @@ const Index = () => {
           `
         }} />
 
-        {/* Layout otimizado para conversão máxima - Primeira dobra completa */}
-        <div className="max-w-4xl w-full text-center space-y-4">
+        {/* Layout otimizado para conversão máxima - Primeira dobra completa mobile */}
+        <div className="max-w-md md:max-w-4xl w-full text-center space-y-2 md:space-y-4">
           
           {/* Título Principal Ultra Impactante - Primeira posição */}
           <h1 className="text-2xl md:text-4xl font-black text-white leading-tight animate-title-entrance mb-2">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-pink-500 to-purple-600">
-              {configs.main_title}
+              {configs.hero_title || configs.main_title}
             </span>
             <br />
             <span className="text-white text-lg md:text-2xl mt-1 block">
-              {configs.subtitle}
+              {configs.hero_subtitle || configs.subtitle}
             </span>
           </h1>
 
