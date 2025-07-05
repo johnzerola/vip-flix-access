@@ -159,36 +159,47 @@ All colors MUST be HSL.
   /* Mobile-first optimizations para conversão máxima */
   @media (max-width: 768px) {
     .container {
-      @apply px-3;
+      @apply px-2;
     }
     
     /* Botões otimizados para mobile */
     button {
-      min-height: 65px;
+      min-height: 60px;
       min-width: 280px;
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
     
-    /* Títulos otimizados para mobile */
+    /* Títulos otimizados para mobile - Mais compactos */
     h1 {
-      @apply text-2xl leading-tight;
-      margin-bottom: 1rem;
+      @apply text-xl leading-tight;
+      margin-bottom: 0.5rem;
     }
     
     h2 {
-      @apply text-xl leading-tight;
-      margin-bottom: 1rem;
+      @apply text-lg leading-tight;
+      margin-bottom: 0.75rem;
     }
 
-    /* Espaçamento otimizado para primeira dobra */
+    /* Espaçamento super otimizado para primeira dobra mobile */
     .space-y-4 > * + * {
-      margin-top: 1rem;
+      margin-top: 0.5rem;
     }
 
     /* Padding reduzido para maximizar espaço */
     .py-4 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    /* Layout mobile super compacto */
+    .min-h-screen {
       padding-top: 1rem;
       padding-bottom: 1rem;
+    }
+
+    /* Imagem otimizada para mobile */
+    img {
+      max-height: 160px !important;
     }
   }
 

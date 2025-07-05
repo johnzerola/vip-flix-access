@@ -143,71 +143,67 @@ const Index = () => {
         <div className="max-w-4xl w-full text-center space-y-4">
           
           {/* Título Principal Ultra Impactante - Primeira posição */}
-          <h1 className="text-3xl md:text-5xl font-black text-white leading-tight animate-title-entrance mb-4">
+          <h1 className="text-2xl md:text-4xl font-black text-white leading-tight animate-title-entrance mb-2">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-pink-500 to-purple-600">
               {configs.main_title}
             </span>
             <br />
-            <span className="text-white text-xl md:text-3xl mt-2 block">
+            <span className="text-white text-lg md:text-2xl mt-1 block">
               {configs.subtitle}
             </span>
           </h1>
 
-          {/* Imagem compacta - Tamanho reduzido para economizar espaço vertical */}
-          <div className="relative mb-4 animate-fade-in">
+          {/* Imagem principal otimizada para mobile - Nova imagem PNG */}
+          <div className="relative mb-3 animate-fade-in">
             {configs.hero_image_url ? (
               <img 
                 src={configs.hero_image_url} 
                 alt="VIP Content" 
-                className="w-full max-w-md mx-auto rounded-xl shadow-xl"
-                style={{ maxHeight: '200px', objectFit: 'cover' }}
+                className="w-full max-w-sm mx-auto rounded-2xl shadow-2xl"
+                style={{ maxHeight: '180px', objectFit: 'contain' }}
               />
             ) : (
-              <div className="bg-gradient-to-r from-pink-600 via-purple-600 to-red-600 rounded-xl p-4 relative overflow-hidden max-w-md mx-auto">
+              <div className="max-w-sm mx-auto">
                 <img 
-                  src="/lovable-uploads/bed10d5d-32f4-4e07-b740-cf5ede3ccb2e.png" 
-                  alt="OnlyFans Content" 
-                  className="w-full h-auto rounded-lg"
+                  src="/lovable-uploads/721e3e0c-8717-45de-9ad8-646bd50a5449.png" 
+                  alt="OnlyFans - O Melhor do Brasil" 
+                  className="w-full h-auto rounded-2xl shadow-2xl"
+                  style={{ maxHeight: '180px', objectFit: 'contain' }}
                 />
-                <div className="relative z-10 mt-2">
-                  <div className="text-white text-lg font-bold">
-                    OnlyFans & Privacy
-                  </div>
-                </div>
               </div>
             )}
           </div>
 
           {/* Texto de autoridade com números impactantes */}
-          <h2 className="text-xl md:text-2xl font-bold text-white leading-tight animate-slide-in-up mb-4">
+          <h2 className="text-lg md:text-2xl font-bold text-white leading-tight animate-slide-in-up mb-3">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-purple-600">
               {configs.stats_text}
             </span>
           </h2>
 
           {/* BOTÃO VIP - PRIORIDADE ABSOLUTA - Primeira dobra garantida */}
-          <div className="space-y-3 max-w-lg mx-auto animate-fade-in-delay">
-            <div className="space-y-2">
+          <div className="space-y-2 max-w-lg mx-auto animate-fade-in-delay">
+            <div className="space-y-1">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold text-lg md:text-xl px-6 py-5 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-200 min-h-[65px] w-full animate-pulse-glow-intense"
+                className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold text-lg md:text-xl px-6 py-4 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-200 min-h-[60px] w-full animate-pulse-glow-intense"
                 onClick={handleVipClick}
               >
-                <Crown className="mr-2 h-6 w-6 md:h-8 md:w-8" />
+                <Crown className="mr-2 h-5 w-5 md:h-6 md:w-6" />
                 {configs.vip_button_text}
               </Button>
-              <p className="text-gray-300 text-sm font-medium animate-pulse">
+              <p className="text-gray-300 text-xs font-medium animate-pulse">
                 {configs.vip_button_subtitle}
               </p>
             </div>
             
-            {/* Botão de prévias - Secundário, pode ficar ligeiramente abaixo */}
+            {/* Botão de prévias - Secundário, logo abaixo mas visível */}
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-lg md:text-xl px-6 py-5 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-200 min-h-[65px] w-full"
+              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-lg md:text-xl px-6 py-4 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-200 min-h-[60px] w-full mt-3"
               onClick={handlePreviewClick}  
             >
-              <Eye className="mr-2 h-6 w-6 md:h-8 md:w-8" />
+              <Eye className="mr-2 h-5 w-5 md:h-6 md:w-6" />
               {configs.preview_button_text}
             </Button>
           </div>
