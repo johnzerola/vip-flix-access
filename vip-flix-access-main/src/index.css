@@ -1,0 +1,243 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom animations otimizadas para conversão */
+  @keyframes pulse-glow-intense {
+    0%, 100% {
+      box-shadow: 0 0 10px rgba(239, 68, 68, 0.7);
+      transform: scale(1);
+    }
+    50% {
+      box-shadow: 0 0 25px rgba(239, 68, 68, 1), 0 0 35px rgba(239, 68, 68, 0.8);
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in-delay {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    30% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Animação otimizada para o título principal */
+  @keyframes title-entrance {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px) scale(0.98);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Micro animações para botões */
+  @keyframes button-hover {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.05);
+    }
+  }
+
+  .animate-pulse-glow-intense {
+    animation: pulse-glow-intense 1.5s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+
+  .animate-slide-in-up {
+    animation: slide-in-up 0.8s ease-out 0.1s both;
+  }
+
+  .animate-fade-in-delay {
+    animation: fade-in-delay 1s ease-out;
+  }
+
+  .animate-title-entrance {
+    animation: title-entrance 0.8s ease-out;
+  }
+
+  /* Mobile-first optimizations para conversão máxima */
+  @media (max-width: 768px) {
+    .container {
+      @apply px-3;
+    }
+    
+    /* Botões otimizados para mobile */
+    button {
+      min-height: 65px;
+      min-width: 280px;
+      font-size: 1.1rem;
+    }
+    
+    /* Títulos otimizados para mobile */
+    h1 {
+      @apply text-2xl leading-tight;
+      margin-bottom: 1rem;
+    }
+    
+    h2 {
+      @apply text-xl leading-tight;
+      margin-bottom: 1rem;
+    }
+
+    /* Espaçamento otimizado para primeira dobra */
+    .space-y-4 > * + * {
+      margin-top: 1rem;
+    }
+
+    /* Padding reduzido para maximizar espaço */
+    .py-4 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  }
+
+  /* High contrast para melhor conversão */
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+  }
+
+  /* Enhanced button hover effects para conversão */
+  .hover-scale-intense {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-scale-intense:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Optimização visual para hierarquia */
+  .priority-button {
+    position: relative;
+    z-index: 10;
+  }
+
+  .secondary-button {
+    position: relative;
+    z-index: 5;
+  }
+}
+
+/* Performance optimizations */
+@layer utilities {
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  .smooth-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Mobile-first viewport optimization */
+  .min-h-screen-mobile {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
+  /* Conversão otimizada */
+  .conversion-optimized {
+    @apply gpu-accelerated smooth-transition;
+  }
+}
