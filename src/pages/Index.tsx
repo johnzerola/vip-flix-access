@@ -166,7 +166,7 @@ const Index = () => {
                 src={configs.hero_image_url} 
                 alt="VIP Content" 
                 className="w-full max-w-md mx-auto rounded-2xl shadow-2xl"
-                style={{ maxHeight: '250px', objectFit: 'contain' }}
+                style={{ maxHeight: '500px', objectFit: 'contain' }}
               />
             ) : (
               <div className="max-w-md mx-auto">
@@ -174,7 +174,7 @@ const Index = () => {
                   src="/lovable-uploads/721e3e0c-8717-45de-9ad8-646bd50a5449.png" 
                   alt="OnlyFans - O Melhor do Brasil" 
                   className="w-full h-auto rounded-2xl shadow-2xl"
-                  style={{ maxHeight: '250px', objectFit: 'contain' }}
+                  style={{ maxHeight: '500px', objectFit: 'contain' }}
                 />
               </div>
             )}
