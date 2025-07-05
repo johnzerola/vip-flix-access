@@ -159,7 +159,7 @@ const Index = () => {
             </span>
           </h1>
 
-          {/* Imagem principal otimizada para mobile - Nova imagem PNG */}
+          {/* Imagem principal otimizada para mobile - altura máxima de 500px */}
           <div className="relative mb-3 animate-fade-in">
             {configs.hero_image_url ? (
               <img 
