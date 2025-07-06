@@ -29,33 +29,21 @@ const AdminPanel = () => {
   const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState("analytics");
 
-  const ADMIN_EMAIL = import.meta.env.VITE_ADMIN_EMAIL as string;
+  const ADMIN_PASSWORD = "admin123"; // Senha padrão - mude para sua senha
 
   const handleLogin = async () => {
-    try {
-      const { error } = await supabase.auth.signInWithPassword({
-        email: ADMIN_EMAIL,
-        password,
-      });
-
-      if (error) {
-        toast.error("Credenciais inválidas!");
-        setPassword("");
-        return;
-      }
-
+    if (password === ADMIN_PASSWORD) {
       setIsAuthenticated(true);
       toast.success("Acesso autorizado!");
       loadAnalytics();
       loadConfigs();
-    } catch (err) {
-      toast.error("Erro ao fazer login!");
-      console.error(err);
+    } else {
+      toast.error("Senha incorreta!");
+      setPassword("");
     }
   };
 
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
+  const handleLogout = () => {
     setIsAuthenticated(false);
     setPassword("");
     setAnalytics(null);
