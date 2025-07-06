@@ -172,7 +172,7 @@ const Index = () => {
               <img
                 src="/lovable-uploads/721e3e0c-8717-45de-9ad8-646bd50a5449.png"
                 alt="OnlyFans - O Melhor do Brasil"
-                className="w-full max-w-xs mx-auto rounded-xl shadow-2xl object-contain h-[200px] md:h-[400px]"
+                className="w-full max-w-sm mx-auto rounded-xl shadow-2xl object-cover h-[280px] md:h-[400px]"
                 loading="eager"
               />
             )}
