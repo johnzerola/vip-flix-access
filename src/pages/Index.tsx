@@ -31,7 +31,7 @@ const Index = () => {
     hero_image_url: '',
     hero_title: '🔥 O Maior Portal VIP do Brasil',
     hero_subtitle: 'OnlyFans & Privacy sem Restrições',
-    previas_link: 'https://t.me/SpyConteudos'
+    previas_link: 'https://t.me/+eXtmPf2AIzY4YmQx'
   });
 
   // Carregar configurações do Supabase
