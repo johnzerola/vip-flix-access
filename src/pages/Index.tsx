@@ -27,7 +27,7 @@ const Index = () => {
     vip_button_subtitle: 'Veja todos os vídeos completos, sem censura, 100% reais',
     preview_button_text: '🔵 VER PRÉVIAS GRÁTIS',
     vip_link: 'https://t.me/+SeuLinkDoGrupoVip',
-    preview_link: 'https://t.me/+SeuLinkDoCanalDePrevias',
+    preview_link: 'https://t.me/+eXtmPf2AIzY4YmQx',
     hero_image_url: '',
     hero_title: '🔥 O Maior Portal VIP do Brasil',
     hero_subtitle: 'OnlyFans & Privacy sem Restrições',
