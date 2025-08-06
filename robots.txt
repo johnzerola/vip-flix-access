@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://vazadosprivacyflix.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Disallow admin areas
+Disallow: /acesso-restrito/
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all content but with age verification
+# This site is for adults only (18+)

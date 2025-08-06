@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Eye, Crown, MessageCircle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Helmet } from "react-helmet";
+import AgeVerification from "@/components/AgeVerification";
+import { Footer } from "@/components/Footer";
 
 interface SiteConfigs {
   main_title: string;
@@ -20,6 +22,7 @@ interface SiteConfigs {
 }
 
 const Index = () => {
+  const [isAgeVerified, setIsAgeVerified] = useState(false);
   const [configs, setConfigs] = useState<SiteConfigs>({
     main_title: '🔥 O Maior Portal VIP do Brasil',
     subtitle: 'OnlyFans & Privacy sem Restrições',
@@ -111,6 +114,10 @@ const Index = () => {
     registrarClique('Falar com Suporte');
     window.open('https://t.me/spyvipconteudo', '_blank');
   };
+
+  if (!isAgeVerified) {
+    return <AgeVerification onVerified={() => setIsAgeVerified(true)} />;
+  }
 
   return (
     <>
@@ -206,6 +213,16 @@ const Index = () => {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="format-detection" content="telephone=no" />
+        
+        {/* Security Headers */}
+        <meta httpEquiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data: blob:; img-src 'self' https: data: blob:; font-src 'self' https: data:;" />
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
+        <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+        
+        {/* DMCA & Legal Compliance */}
+        <meta name="copyright" content="Privacy Flix VIP 2024" />
+        <meta name="disclaimer" content="Este site é destinado exclusivamente para adultos maiores de 18 anos" />
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 flex flex-col items-center justify-center px-3 py-3 md:px-4 md:py-4">
@@ -315,6 +332,8 @@ const Index = () => {
             </a>
           </div>
         </div>
+        
+        <Footer />
       </div>
     </>
   );
