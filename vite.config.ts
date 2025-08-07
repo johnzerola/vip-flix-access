@@ -8,6 +8,8 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    // Force cache clear on development
+    force: true,
   },
   plugins: [
     react(),
@@ -26,7 +28,12 @@ export default defineConfig(({ mode }) => ({
     minify: 'esbuild',
     rollupOptions: {
       output: {
-        manualChunks: undefined
+        // Prevent chunk reuse that could contain old dependencies
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+        }
       }
     },
     chunkSizeWarningLimit: 1000,
@@ -38,12 +45,14 @@ export default defineConfig(({ mode }) => ({
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom', '@supabase/supabase-js'],
-    // Force Vite to re-bundle dependencies 
-    force: true
+    // Force complete rebuild of dependencies
+    force: true,
+    // Exclude any potential tanstack references
+    exclude: ['@tanstack/react-query']
   },
   esbuild: {
     logOverride: { 'this-is-undefined-in-esm': 'silent' }
   },
-  // Clear cache on restart
-  cacheDir: '.vite-fresh'
+  // Use different cache directory to avoid conflicts
+  cacheDir: '.vite-clean'
 }));
