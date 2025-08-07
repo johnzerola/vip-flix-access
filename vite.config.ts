@@ -22,7 +22,6 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Otimizações para mobile
     target: 'es2015',
     minify: 'esbuild',
     rollupOptions: {
@@ -31,15 +30,20 @@ export default defineConfig(({ mode }) => ({
       }
     },
     chunkSizeWarningLimit: 1000,
-    // Compressão de assets
     assetsInlineLimit: 4096,
     cssCodeSplit: true,
-    sourcemap: false
+    sourcemap: false,
+    // Force clean rebuild
+    emptyOutDir: true
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom', '@supabase/supabase-js']
+    include: ['react', 'react-dom', 'react-router-dom', '@supabase/supabase-js'],
+    // Force Vite to re-bundle dependencies 
+    force: true
   },
   esbuild: {
     logOverride: { 'this-is-undefined-in-esm': 'silent' }
-  }
+  },
+  // Clear cache on restart
+  cacheDir: '.vite-fresh'
 }));
