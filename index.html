@@ -3,7 +3,7 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no, shrink-to-fit=no" />
     <title>🔥 Mari Avila Aline Faria Juliana Bonde Vazados - Caiu na Net Atrizes Blogueiras Nuas Brasil 2024</title>
     
     <!-- Meta Description Otimizada para SEO -->
@@ -59,6 +59,18 @@
     <meta name="msapplication-TileColor" content="#dc2626" />
     <meta name="msapplication-config" content="/browserconfig.xml" />
     
+    <!-- Security & Trust Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data: blob:; img-src 'self' https: data: blob:; connect-src 'self' https: wss:;" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+    
+    <!-- DMCA & Legal Compliance -->
+    <meta name="copyright" content="Privacy Flix VIP 2024 - Todos os direitos reservados" />
+    <meta name="disclaimer" content="Este site é destinado exclusivamente para adultos maiores de 18 anos. Todo conteúdo está em conformidade com as leis aplicáveis." />
+    <meta name="rating" content="RTA-5042-1996-1400-1577-RTA" />
+    
     <!-- Mobile Optimization -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -93,8 +105,14 @@
     <link rel="dns-prefetch" href="//google-analytics.com" />
     <link rel="dns-prefetch" href="//googletagmanager.com" />
     
-    <!-- Preload Critical Resources -->
+    <!-- Preload Critical Resources para mobile -->
     <link rel="preload" href="/lovable-uploads/721e3e0c-8717-45de-9ad8-646bd50a5449.png" as="image" />
+    <link rel="preload" href="/src/main.tsx" as="script" />
+    <link rel="modulepreload" href="/src/main.tsx" />
+    
+    <!-- Prefetch recursos importantes -->
+    <link rel="prefetch" href="https://t.me/+eXtmPf2AIzY4YmQx" />
+    <link rel="prefetch" href="https://t.me/spyvipconteudo" />
     
     <!-- Hreflang para SEO Internacional -->
     <link rel="alternate" hreflang="pt-br" href="https://vazadosprivacyflix.com/" />
@@ -150,6 +168,21 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Service Worker para performance mobile -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js', { scope: '/' })
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
     
     <!-- GoatCounter Analytics (Privacy-focused) -->
     <script data-goatcounter="https://vazadosprivacy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
