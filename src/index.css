@@ -159,122 +159,47 @@ All colors MUST be HSL.
   /* Mobile-first optimizations para conversão máxima */
   @media (max-width: 768px) {
     .container {
-      @apply px-1;
+      @apply px-2;
     }
     
-    /* Botões ultra-otimizados para mobile - Touch targets */
+    /* Botões otimizados para mobile */
     button {
-      min-height: 56px;
+      min-height: 60px;
       min-width: 280px;
       font-size: 1rem;
-      font-weight: 700;
-      border-radius: 12px;
-      touch-action: manipulation;
-      -webkit-tap-highlight-color: transparent;
     }
     
-    /* Títulos super-otimizados para mobile - Máxima legibilidade */
+    /* Títulos otimizados para mobile - Mais compactos */
     h1 {
-      @apply text-lg leading-tight;
+      @apply text-xl leading-tight;
       margin-bottom: 0.5rem;
-      word-break: break-word;
-      hyphens: auto;
     }
     
     h2 {
-      @apply text-sm leading-tight;
+      @apply text-lg leading-tight;
       margin-bottom: 0.75rem;
-      word-break: break-word;
     }
 
-    /* Espaçamento ultra-otimizado para primeira dobra mobile */
+    /* Espaçamento super otimizado para primeira dobra mobile */
     .space-y-4 > * + * {
       margin-top: 0.5rem;
     }
 
-    .space-y-2 > * + * {
-      margin-top: 0.25rem;
-    }
-
-    /* Padding ultra-reduzido para maximizar espaço */
+    /* Padding reduzido para maximizar espaço */
     .py-4 {
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
     }
 
-    .px-4 {
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
-    }
-
-    /* Layout mobile super-compacto */
+    /* Layout mobile super compacto */
     .min-h-screen {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
     }
 
-    /* Imagem ultra-otimizada para mobile */
+    /* Imagem otimizada para mobile */
     img {
-      max-height: 200px !important;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-
-    /* Texto otimizado para mobile */
-    .text-xs {
-      font-size: 0.7rem;
-      line-height: 1.2;
-    }
-
-    /* Margens reduzidas para mobile */
-    .mb-3 {
-      margin-bottom: 0.5rem;
-    }
-
-    .mb-2 {
-      margin-bottom: 0.25rem;
-    }
-
-    /* Viewport otimizado */
-    body {
-      -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-      text-size-adjust: 100%;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    /* Scroll otimizado para mobile */
-    html {
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    /* Input otimizado para mobile */
-    input, textarea, select {
-      -webkit-appearance: none;
-      appearance: none;
-      border-radius: 8px;
-    }
-  }
-
-  /* Extra small screens (até 360px) */
-  @media (max-width: 360px) {
-    button {
-      min-width: 100%;
-      font-size: 0.9rem;
-    }
-    
-    h1 {
-      @apply text-base;
-    }
-    
-    h2 {
-      @apply text-xs;
-    }
-    
-    img {
-      max-height: 180px !important;
+      max-height: 250px !important;
     }
   }
 
