@@ -37,7 +37,7 @@ export default defineConfig(({ mode }) => ({
     sourcemap: false
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom', '@supabase/supabase-js', '@tanstack/react-query']
+    include: ['react', 'react-dom', 'react-router-dom', '@supabase/supabase-js']
   },
   esbuild: {
     logOverride: { 'this-is-undefined-in-esm': 'silent' }
